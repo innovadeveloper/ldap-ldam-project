@@ -3,10 +3,9 @@ version: '3'
 services:
   lam:
     image: computersciencehouse/ldap-account-manager
-    # build: .
     restart: always
     ports:
-      - 8080:8080
+      - 20007:8080
   ldap:
     image: osixia/openldap:1.5.0
     container_name: ldap
@@ -18,5 +17,5 @@ services:
     volumes:
       - ./assets/ldap/ldif:/ldap-data
     ports:
-        - 389:389
-        - 636:636
+        - 20005:389
+        - 20006:636
