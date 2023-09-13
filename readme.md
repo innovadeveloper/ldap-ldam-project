@@ -22,6 +22,11 @@ userPassword: {SSHA}v8zpqmgAULvUZXE+HWiDMNRwHCDB0s2j
 
 # aplicar el ldif (solicitarà password de LDAP, ver 'LDAP_ADMIN_PASSWORD' de docker-compose)
 ldapadd -x -H ldap://localhost:389 -D "cn=admin,dc=abexa,dc=pe" -W -f /home/admin.ldif
+
+ldapadd -x -H ldap://localhost:389 -D "cn=admin,dc=abexa,dc=pe" -W -f /home/all-data.ldif
+
+ldapadd -x -H ldap://localhost:389 -D "cn=admin,dc=abexa,dc=pe" -W -f all-entries.ldif
+
 ´´´
 more info : https://medium.com/rahasak/deploy-ldap-directory-service-with-openldap-docker-8d9f438f1216
 more info (2) : https://www.digitalocean.com/community/tutorials/how-to-change-account-passwords-on-an-openldap-server

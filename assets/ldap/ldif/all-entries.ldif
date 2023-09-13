@@ -1,0 +1,81 @@
+# IMPORT DATA 
+# ldapadd -x -H ldap://localhost:389 -D "cn=admin,dc=abexa,dc=pe" -W -f all-entries.ldif
+
+# extended LDIF
+#
+# LDAPv3
+# base <dc=abexa,dc=pe> with scope subtree
+# filter: (objectClass=*)
+# requesting: ALL
+#
+
+# abexa.pe
+dn: dc=abexa,dc=pe
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: abexa
+dc: abexa
+
+# admin, abexa.pe
+dn: cn=admin,dc=abexa,dc=pe
+objectClass: organizationalRole
+objectClass: simpleSecurityObject
+cn: admin
+userPassword:: e1NTSEF9djh6cHFtZ0FVTHZVWlhFK0hXaURNTlJ3SENEQjBzMmo=
+
+# user, abexa.pe
+dn: ou=user,dc=abexa,dc=pe
+objectClass: organizationalUnit
+ou: user
+
+# group, abexa.pe
+dn: ou=group,dc=abexa,dc=pe
+objectClass: organizationalUnit
+ou: group
+
+# kbaltazar, user, abexa.pe
+dn: uid=kbaltazar,ou=user,dc=abexa,dc=pe
+cn: kane
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+sn: baltazar
+uid: kbaltazar
+userPassword:: e01ENX0zSlR3VkJwTXI0R2x3cHBPeUpmVSt3PT0=
+mail: kbaltazar.abx@gmail.com
+
+# developers, group, abexa.pe
+dn: cn=developers,ou=group,dc=abexa,dc=pe
+cn: developers
+member: uid=kbaltazar,ou=user,dc=abexa,dc=pe
+objectClass: groupOfNames
+objectClass: top
+
+# roles, abexa.pe
+dn: ou=roles,dc=abexa,dc=pe
+ou: roles
+objectClass: organizationalUnit
+objectClass: top
+
+# manager, roles, abexa.pe
+dn: cn=manager,ou=roles,dc=abexa,dc=pe
+cn: manager
+description: manager role
+objectClass: organizationalRole
+objectClass: top
+roleOccupant: cn=developers,ou=group,dc=abexa,dc=pe
+
+# employer, roles, abexa.pe
+dn: cn=employer,ou=roles,dc=abexa,dc=pe
+cn: employer
+objectClass: organizationalRole
+objectClass: top
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 10
+# numEntries: 9

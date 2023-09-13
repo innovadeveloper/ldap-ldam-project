@@ -15,6 +15,8 @@ services:
         - LDAP_DOMAIN=abexa.pe
         - "LDAP_BASE_DN=dc=abexa,dc=pe"
         - LDAP_ADMIN_PASSWORD=abexa
+    volumes:
+      - ./assets/ldap/ldif:/ldap-data
     ports:
         - 389:389
         - 636:636

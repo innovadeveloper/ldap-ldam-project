@@ -1,30 +1,3 @@
-dn: dc=abexa,dc=pe
-objectClass: top
-objectClass: dcObject
-objectClass: organization
-o: abexa
-dc: abexa
-structuralObjectClass: organization
-entryUUID: d650e820-e624-103d-8a44-8532b731edfe
-creatorsName: cn=admin,dc=abexa,dc=pe
-createTimestamp: 20230913015854Z
-entryCSN: 20230913015854.318756Z#000000#000#000000
-modifiersName: cn=admin,dc=abexa,dc=pe
-modifyTimestamp: 20230913015854Z
-
-dn: cn=admin,dc=abexa,dc=pe
-objectClass: organizationalRole
-objectClass: simpleSecurityObject
-cn: admin
-userPassword:: e1NTSEF9djh6cHFtZ0FVTHZVWlhFK0hXaURNTlJ3SENEQjBzMmo=
-structuralObjectClass: organizationalRole
-entryUUID: 1a72b99e-e63d-103d-83fe-4b9ca310c833
-creatorsName: cn=admin,dc=abexa,dc=pe
-createTimestamp: 20230913045236Z
-entryCSN: 20230913045236.546911Z#000000#000#000000
-modifiersName: cn=admin,dc=abexa,dc=pe
-modifyTimestamp: 20230913045236Z
-
 dn: ou=user,dc=abexa,dc=pe
 objectClass: organizationalUnit
 ou: user
