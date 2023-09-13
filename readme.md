@@ -11,17 +11,17 @@ slapcat
 ´´´shell 
 # generar una clave hash segura en formato SSHA
 slappasswd -s admin
-> {SSHA}HjHd3BzXy2e9v8/5ZlBg+POnz+9uWQiE
+> {SSHA}v8zpqmgAULvUZXE+HWiDMNRwHCDB0s2j
 
 # crear una entrada con el siguiente valor para el usuario admin (file : admin-user.ldif)
 dn: cn=admin,dc=abexa,dc=pe
 objectClass: organizationalRole
 objectClass: simpleSecurityObject
 cn: admin
-userPassword: {SSHA}kDcKYjUrAM9A9oLbdxmmyup0gJOvhGx3
+userPassword: {SSHA}v8zpqmgAULvUZXE+HWiDMNRwHCDB0s2j
 
 # aplicar el ldif (solicitarà password de LDAP, ver 'LDAP_ADMIN_PASSWORD' de docker-compose)
-ldapadd -x -H ldap://localhost:389 -D "cn=admin,dc=abexa,dc=pe" -W -f /tmp/admin-user.ldif
+ldapadd -x -H ldap://localhost:389 -D "cn=admin,dc=abexa,dc=pe" -W -f /home/admin.ldif
 ´´´
 more info : https://medium.com/rahasak/deploy-ldap-directory-service-with-openldap-docker-8d9f438f1216
 more info (2) : https://www.digitalocean.com/community/tutorials/how-to-change-account-passwords-on-an-openldap-server

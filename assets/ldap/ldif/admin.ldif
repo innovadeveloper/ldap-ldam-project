@@ -1,0 +1,5 @@
+dn: cn=admin,dc=abexa,dc=pe
+objectClass: organizationalRole
+objectClass: simpleSecurityObject
+cn: admin
+userPassword: {SSHA}v8zpqmgAULvUZXE+HWiDMNRwHCDB0s2j
