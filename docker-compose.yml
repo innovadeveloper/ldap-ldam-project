@@ -3,12 +3,14 @@ version: '3'
 services:
   lam:
     image: computersciencehouse/ldap-account-manager
+    container_name: lam
     restart: always
     ports:
       - 20007:8080
   ldap:
     image: osixia/openldap:1.5.0
     container_name: ldap
+    restart: always
     environment:
         - LDAP_ORGANISATION=abexa
         - LDAP_DOMAIN=abexa.pe

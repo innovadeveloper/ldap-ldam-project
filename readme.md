@@ -19,7 +19,13 @@ ldapwhoami -x -D cn=admin,dc=wso2,dc=com -W
 
 sudo slapcat -b "cn=config"
 ```
+sudo ldapadd -Y EXTERNAL -H ldapi:// -f wso2Person.ldif
+sudo ldapadd -Y EXTERNAL -H ldapi:// -f scimPerson.ldif
+sudo ldapadd -Y EXTERNAL -H ldapi:// -f identityPerson.ldif
 
+docker exec -it ldap ldapsearch -Q -LLL -Y EXTERNAL -H ldapi:/// -b cn=config dn
+docker exec -it ldap ldapadd -Y EXTERNAL -H ldapi:// -f /ldap-data/entries/base.innova.pe.ldif
+docker exec -it ldap ldapadd -x -D "cn=admin,dc=abexa,dc=pe" -W -f /ldap-data/entries/base.innova.pe.ldif
 
 
 ```shell

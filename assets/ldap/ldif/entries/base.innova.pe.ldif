@@ -1,0 +1,6 @@
+dn: dc=innova,dc=pe
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: innova.pe
+dc: innova
