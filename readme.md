@@ -1,6 +1,38 @@
 ## LDAP commands (Search, Create Records)
+
+
+```shell
+# comandos ldap
+
+sudo apt install slapd ldap-utils
+sudo dpkg-reconfigure slapd
+    # domain : wso2.com
+sudo vim /etc/ldap/ldap.conf
+    # BASE    dc=wso2,dc=com
+    # URI     ldap://localhost:389
+sudo ldapsearch -Q -LLL -Y EXTERNAL -H ldapi:/// -b cn=config dn
+ldapsearch -x -LLL -H ldap:/// -b dc=wso2,dc=com dn
+
+ldapwhoami -x
+ldapwhoami -x -D cn=admin,dc=wso2,dc=com -W
+
+
+sudo slapcat -b "cn=config"
+```
+
+
+
 ```shell
 # filtros
+# ldapsearch -x -H ldap://localhost:10389 -b dc=WSO2,dc=ORG -D "uid=admin,ou=Users,dc=WSO2,dc=ORG" -w admin dn
+# ldapsearch -x -H ldap://localhost:10389 -b dc=WSO2,dc=ORG -D "uid=admin,ou=Users,dc=WSO2,dc=ORG" -w admin dn
+
+# ldapsearch -x -H ldap://localhost:10389 -D "uid=admin,ou=system" -W -b "cn=config" dn
+
+
+
+
+
 ldapsearch -x -H ldap://localhost:389 -b dc=abexa,dc=pe
 ldapsearch -x -H ldap://localhost:20005 -b dc=abexa,dc=pe
 ldapsearch -x -H ldap://localhost:20005 -b dc=abexa,dc=pe -D "cn=admin,dc=abexa,dc=pe" -w admin
