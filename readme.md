@@ -1,5 +1,7 @@
 ## LDAP commands (Search, Create Records)
 
+more info :
+https://www.notion.so/Setup-OpenLDAP-a48603a14c364e4a99d600fd10f0f7d7
 
 ```shell
 # volcar todas las entradas de la base del directorio (ex : dc=abexa,dc=pe)
