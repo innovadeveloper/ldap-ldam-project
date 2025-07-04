@@ -1,0 +1,10 @@
+dn: cn={9}customperson,cn=schema,cn=config
+changetype: modify
+replace: olcObjectClasses
+olcObjectClasses: ( 1.3.6.1.4.1.37505.1.6
+    NAME 'customperson'
+    DESC 'customperson'
+    SUP inetOrgPerson
+    STRUCTURAL
+    MAY  ( miNombre $ miApellido $ miDistrito)
+ )
